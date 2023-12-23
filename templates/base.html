@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+
+        <script src="{% static 'functions.js' %}" defer></script>
+        {% block scripts %}
+        {% endblock scripts %}
+
+        <title> Get Fit With John | {% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="d-flex align-items-center">
+                    <img src="/../../media/test.png" alt="My Emblem" style="width: 100px; height: auto;">
+    
+                    <!-- Add Tabs -->
+                    <ul class="nav nav-tabs ml-3" id="myTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts">Posts</a>
+                    </ul>
+                </div>
+            </div>
+        <div class="container mt-3">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </body>
+</html>
